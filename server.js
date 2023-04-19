@@ -12,6 +12,12 @@ const db = mysql.createConnection(
   console.log("Connected to the books_db databse.")
 );
 
+db.connect(err => {
+  if(err) throw err;
+  console.log("Connected!");
+  mainMenu();
+});
+
 const mainMenu = () => {
   inquirer
     .prompt({
