@@ -59,8 +59,40 @@ const mainMenu = () => {
           updateEmployee();
           break;
         case "Exit":
-          return;
+          db.end();
       }
-      mainMenu();
     });
+};
+
+const openAllDepartments = () => {
+  db.query('SELECT * FROM department', function (err, results) {
+    if(err) throw err;
+    console.table(results);
+    mainMenu();
+  });
+  
+};
+
+const openAllRoles= () => {
+  
+};
+
+const openAllEmployees= () => {
+  
+};
+
+const addDepartment= () => {
+  
+};
+
+const addRole= () => {
+  
+};
+
+const addEmployee= () => {
+  
+};
+
+const updateEmployee= () => {
+  
 };
